@@ -1,0 +1,23 @@
+{
+  "Name": "byteWriter",
+  "Preset": "Custom",
+  "ProjectToken": "282334dc-7ab8-4322-b35f-62d06b98fde7",
+  "ProtectionSecret": "2010@Egek",
+  "Enabled": true,
+  "RunConfiguration": "Debug",
+  "Protections": {
+    "anti_debug": null,
+    "anti_dump": null,
+    "anti_ildasm": null,
+    "resources": null,
+    "invalid_code": null,
+    "events": null,
+    "rename": null,
+    "invalid_metadata": null,
+    "reference_proxy": null,
+    "constants_mutation": null,
+    "constants_protection": null,
+    "anti_jailbreak": null,
+    "control_flow_advance": null
+  }
+}

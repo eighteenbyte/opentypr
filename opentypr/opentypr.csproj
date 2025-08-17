@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Bytehide.Shield.Integration.2.6.0\build\Bytehide.Shield.Integration.props" Condition="Exists('..\packages\Bytehide.Shield.Integration.2.6.0\build\Bytehide.Shield.Integration.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED3BFFE9-4898-4757-881C-F37B87DA67D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>opentypr</RootNamespace>
+    <AssemblyName>opentypr</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>symbolopentypr.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="templates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="templates.Designer.cs">
+      <DependentUpon>templates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="file_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="file_info.Designer.cs">
+      <DependentUpon>file_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="messagebox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="messagebox.Designer.cs">
+      <DependentUpon>messagebox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AdvancedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CustomButtons.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CustomFlowoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CustomPanels.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\TextBoxExtensions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="templates.resx">
+      <DependentUpon>templates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="file_info.resx">
+      <DependentUpon>file_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="messagebox.resx">
+      <DependentUpon>messagebox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\article.rtf" />
+    <None Include="Resources\basic.rtf" />
+    <None Include="Resources\defaultTemplate.rtf" />
+    <None Include="Resources\letter.rtf" />
+    <None Include="Resources\modern.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aligntoright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aligntoleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteforming.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\charactergap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increasesize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decreasesize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textcolor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\underlined.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strikethrough.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\italic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowtemplate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selectall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toPDF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toRTF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toDOCX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\draganddropfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\templatelong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newlong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\renamelong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infolong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printlong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportlong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sharelong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gray_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savewarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sharelong_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightgray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowtemplate_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detectlinks_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\horizontalpage_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highlight_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultzoom_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\superscript_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selectall_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dateandtime_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\draganddrop_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aligntoleft_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bulletlist_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbol_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savewarrow_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveas_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linegap_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aligntoright_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\templatelong_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toRTF_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\renamelong_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printlong_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toPDF_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignmiddle_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strikethrough_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decreasesize_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\darkmode_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlock_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\charactergap_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bold_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagecolor_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pageindent_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagesize_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\italic_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infolong_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decreaseindent_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increaseindent_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportlong_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statusbar_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\draganddropfile_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toDOCX_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verticalpage_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equation_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruler_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increasesize_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textcolor_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteforming_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\referencenumber_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reference_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subscript_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\underlined_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportbug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\darkmode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightmode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultzoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\durumcubugu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detectlinks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\draganddrop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pageindent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagecolor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\horizontalpage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verticalpage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagesize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\referencenumber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reference.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emoji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dateandtime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\superscript.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subscript.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decreaseindent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increaseindent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linegap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bulletlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignmiddle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opentyprdark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opentypr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statusbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="symbolopentypr.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 ve x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
